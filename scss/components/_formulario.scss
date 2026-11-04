@@ -1,0 +1,157 @@
+// @use "../utilities/variables" as *;
+// @use "../utilities/functions" as *;
+// @use "../utilities/mixins" as *;
+
+// /* seccion contacto */
+// .section-reserva .content-container {
+
+//     > form {
+//         @include flex-center(column);
+
+//         div {
+//             @include flex-center(column);
+//             width: 100%;
+
+//             > label {
+//                 width: 100%;
+//                 text-align: start;
+//             }
+
+//             > input, textarea {
+//                 width: 100%;
+//                 box-sizing: border-box;
+//                 margin-bottom: rem($espaciado-3);
+//                 height: rem($espaciado-3);
+//                 border: 3px solid $color-terciario;
+//                 border-radius: $radio-borde;
+//                 padding: rem($espaciado-2) rem($espaciado-2);
+//                 background-color: rgba(255, 255, 255, 0.507);
+
+//                 font-size: 1rem;
+//                 font-weight: $font-weight-medio;
+//             }
+
+//             > textarea {
+//                 min-height: rem($espaciado-5 * 3);
+//             }
+//         }
+
+//         @include desde('desktop'){
+//             flex-direction: row;
+//             flex-wrap: wrap;
+//             gap: 0 100px;
+
+//             div {
+//                 flex-basis: calc(50% - 50px);
+
+//                 > textarea {
+//                     min-height: rem($espaciado-5 * 3);
+//                 }
+
+//                 &:last-of-type {
+//                     flex-basis: 100%;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../utilities/mixins" as *;
+
+/* Sección de reservas */
+.section-reserva .content-container {
+    // max-width: 1000px;
+    // margin: 0 auto;
+
+    > form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: rem($espaciado-3) rem($espaciado-6);
+
+        > div {
+            @include flex-center(column);
+            align-items: stretch;
+            min-width: 0;
+            gap: 8px;
+        }
+
+        > div:last-of-type {
+            grid-column: auto;
+        }
+
+        label {
+            color: $color-texto;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-medio;
+            text-align: left;
+            margin-top: $espaciado-1;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px 16px;
+            border: 1px solid $color-borde;
+            border-radius: $radio-borde;
+            background-color: rgba(255, 255, 255, 0.575);
+            color: $color-terciario;
+            font-family: $font-family-base;
+            font-size: $font-size-sm;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input {
+            min-height: 50px;
+        }
+
+        textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: $color-destacado;
+            box-shadow: 0 0 0 3px rgba(211, 148, 1, 0.15);
+            background-color: #fff;
+        }
+
+        > button {
+            grid-column: auto;
+            justify-self: center;
+            width: 100%;
+            margin-top: rem($espaciado-2);
+            padding: 14px 30px;
+            border-radius: $radio-borde;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        > button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(64, 51, 47, 0.15);
+        }
+
+        @include desde('desktop') {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            > div:last-of-type,
+            > button {
+                grid-column: 1 / -1;
+            }
+
+            > button {
+                min-width: 220px;
+            }
+            
+        }
+    }
+}
+
+
+
+

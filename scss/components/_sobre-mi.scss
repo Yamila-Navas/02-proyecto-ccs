@@ -1,0 +1,110 @@
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../utilities/mixins" as *;
+
+/* seccion sobre mi */
+.section-sobre-mi{
+    display: grid;
+    width: 100%;
+    min-height: 600px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header"
+    "contenido"
+    "description";
+
+    > h2 {
+        grid-area: header;
+    }
+
+    > .fondo-decorativo {
+        grid-area: contenido;
+        background-color: $color-terciario;
+        border-radius: 0 100px 0 0;
+    }
+
+    > img {
+        grid-area: contenido;
+        object-fit: cover;
+        object-position: center top;
+        width: 100%;
+        height: 100%;
+        border-radius: 0 100px 0 100px;
+    }
+
+    > .parrafo-sobre-mi {
+        grid-area: description;
+        justify-self: center;
+        align-self: center;
+        background-color: $color-terciario;
+        padding: 20px;
+        @include flex-center();
+
+        > p {
+            padding: 10px 20px;
+        }
+    }
+
+    @include desde('desktop'){
+        width: 100%;
+        max-width: 1200px;
+        min-height: 800px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+        "header header"
+        "img contenido";
+        gap: 30px;
+
+        > .fondo-decorativo {
+            grid-area: img;
+            width: 80%;
+            height: 90%;
+            border-radius: 0; 
+
+            position: relative;
+            z-index: -1;
+            overflow: hidden;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 200%;
+                height: 200%;
+                background: conic-gradient(from 30deg,
+                $color-primario,
+                $color-secundario,
+                $color-secundario,
+                $color-primario);
+                animation: gradientMove 8s ease-in-out infinite;
+            }
+        }
+
+        > img {
+            grid-area: img;
+            width: 80%;
+            height: 90%;
+            justify-self: end;
+            align-self: end;
+            border-radius: 0;
+        }
+
+        > .parrafo-sobre-mi {
+            grid-area: contenido;
+            height: 90%;
+            width: 100%;
+
+            > p {
+                padding: 10px 60px;
+            }
+        }
+    }
+}
+
+@keyframes gradientMove {
+    to { transform: translate(-50%, -50%) rotate(360deg);}
+}

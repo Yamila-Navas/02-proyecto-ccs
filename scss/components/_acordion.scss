@@ -1,0 +1,72 @@
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../utilities/mixins" as *;
+
+/* seccion acordion */
+.section-acordion .content-container {
+    
+    .accordion {
+        // Contenedor
+        --bs-accordion-color: #{$color-terciario};
+        --bs-accordion-bg: #{$color-fondo};
+
+        // Bordes
+        --bs-accordion-border-color: #{$color-borde};
+        --bs-accordion-border-width: 1px;
+        --bs-accordion-border-radius: 10px;
+
+        // Botones cerrados
+        --bs-accordion-btn-color: #{$color-terciario};
+        --bs-accordion-btn-bg: #{$color-fondo};
+
+        // Botón activo
+        --bs-accordion-active-color: #{$color-texto};
+        --bs-accordion-active-bg: #{$color-texto-secundario};
+
+        // Efecto de enfoque
+        --bs-accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgba(211, 148, 1, 0.15);
+
+        // Espaciado
+        --bs-accordion-btn-padding-x: 1.5rem;
+        --bs-accordion-btn-padding-y: 1.25rem;
+
+        --bs-accordion-body-padding-x: 1.5rem;
+        --bs-accordion-body-padding-y: 1.5rem;
+    }
+
+
+    .accordion {
+        // Separación entre elementos
+        .accordion-item {
+            margin-bottom: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: $sombra-suave;
+        }
+
+        // Botones
+        .accordion-button {
+            font-family: $font-family-base;
+            font-weight: $font-weight-medio;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: $color-texto-secundario;
+                --bs-accordion-btn-color: #{$color-texto};
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        // Contenido
+        .accordion-body {
+            text-align: left;
+            line-height: $line-height-base;
+            color: $color-texto-secundario;
+        }
+    }
+}
+

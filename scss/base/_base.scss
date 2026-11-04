@@ -1,0 +1,78 @@
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../utilities/mixins" as *;
+
+/* Reseteo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //outline: 1px solid red;
+}
+
+/* Generales */
+body {
+    background-image: $gradient-fondo;
+}
+
+// bg seciones individuales
+.section-image {
+    @include background-image('../assets/galeria/35.avif');
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 80%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        black 80%,
+        transparent 100%
+    );
+
+    height: 50dvh;
+
+    @include desde('desktop') {
+        height: 100dvh;
+    }
+}
+
+// Index
+.image-2{
+    background-image: url('../assets/galeria/04.avif')
+}
+
+// Experiencias
+.image-3 {
+    background-image: url('../assets/galeria/22.avif');
+}
+
+// Acordion y reservas
+.section-acordion, .section-reserva  {
+    @include background-image("../assets/galeria/35.avif", $degradado-superposicion-oscuro)
+}
+
+// Contenido de la pagina
+.content-container {
+    max-width: rem($ancho-contenedor-principal);
+    margin: 0 auto;
+    padding: clamp(rem($espaciado-2), vw(50px), rem($espaciado-6));
+}
+
+section:last-child {
+    .content-container {
+        padding-bottom: rem($espaciado-5 * 3);
+    }
+}
+
+// preferencias de movimiento
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    }
+}

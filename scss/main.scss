@@ -1,0 +1,23 @@
+@use "utilities/variables";
+@use "utilities/functions";
+@use "utilities/mixins";
+
+@use "base/base";
+@use "base/tipografia";
+
+@use "layout/nav";
+@use "layout/header";
+@use "layout/footer";
+
+@use "components/historia";
+@use "components/cards";
+@use "components/mapa";
+@use "components/galeria";
+@use "components/acordion";
+@use "components/formulario";
+@use "components/_cards-circulares";
+
+// @use "components/mensaje-flotante";
+// @use "components/sobre-mi";
+
+// @use "components/buttons";

@@ -1,0 +1,56 @@
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+
+/* Generales titulos y textos */
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-texto;
+    letter-spacing: 1.5px;
+    line-height: $line-height-base;
+    font-weight: $font-weight-normal;
+    color: $color-texto;
+    text-align: center;
+
+    h1, h2, h3, label {
+        font-size: $font-size-titulo;
+        font-weight: $font-weight-medio;
+        line-height: $line-height-titulo;
+    } 
+
+    h1, h2 {
+        font-family: $font-family-decorativa;
+    } 
+
+    h1 {
+        font-size: $font-size-titulo-hero;
+        text-shadow: $sombra-media;
+    }
+
+    h2 {
+        margin-bottom: rem($espaciado-3);
+        text-align: start;
+    }
+
+    h3 , label {
+        font-size: $font-size-subtitulo;
+        margin-bottom: rem($espaciado-1);
+    }
+
+    a {
+        text-align: center;
+        text-decoration: none;
+    } 
+
+    .negrita {
+        font-weight: $font-weight-bold;
+        color: $color-secundario;
+    }
+
+    .texto-hero {
+        width: 0;
+        min-width: 100%;
+        font-size: $font-size-texto;
+        font-weight: $font-weight-medio;
+        text-shadow: $sombra-media;
+    }
+}

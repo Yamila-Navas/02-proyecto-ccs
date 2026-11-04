@@ -1,0 +1,40 @@
+@use 'sass:map';
+
+$breakpoints: (
+    'tablet': 768px,
+    'desktop': 1024px
+);
+
+@mixin desde($nombre){
+    $ancho: map.get($breakpoints, $nombre);
+
+    @if $ancho {
+        @media (min-width: $ancho) {
+            @content;
+        }
+    } @else {
+        @error 'El breakpoints '#{$nombre}' no existe.'
+    }
+}
+
+@mixin flex-center($flex-direction:row){
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin background-image($url, $overlay:none) {
+    @if $url == null or $url == "" {
+        @error "Debés proporcionar una URL para la imagen de fondo.";
+    }
+
+    @if $overlay != null {
+        background-image: $overlay, url("#{$url}");
+    } @else {
+        background-image: url("#{$url}");
+    }
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

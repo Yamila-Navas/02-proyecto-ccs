@@ -1,0 +1,31 @@
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../utilities/mixins" as *;
+
+.section-mapa .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: rem($espaciado-1);
+
+    > div {
+        > p {
+            text-align: justify;
+        }
+    }
+
+    > iframe {
+        border-radius: $radio-borde;
+        box-shadow: $sombra-destacada;
+    }
+
+    @include desde('desktop'){
+        flex-wrap: nowrap; 
+        gap: rem($espaciado-1 * 5);
+
+        > div, iframe {
+            flex-basis: 50%;
+        }
+    }
+}

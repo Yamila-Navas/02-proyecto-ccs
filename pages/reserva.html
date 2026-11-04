@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- letra principal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- letra cursiva -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+    
+    <!-- Título de la página -->
+    <title>Reservas | Amara Suites</title>
+    <meta name="description" content="Reservá tu estadía en Amara Suites y disfrutá de una experiencia de descanso, comodidad y exclusividad.">
+    <meta name="keywords" content="reservas, alquiler de cabañas, alojamiento, estadías, Amara Suites">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary menu"  data-bs-theme="dark">
+            <div class="container-fluid">
+                <!-- Logo a la izquierda -->
+                <a class="navbar-brand logo-menu" href="../index.html">
+                    Amara Suite
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Enlaces a la derecha -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="./galeria.html">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./politica.html">Política</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./experiencias.html">Experiencias</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="./reserva.html">Reservas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero ">
+            <div class="banner">
+                <h1>Amara Suites</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+
+        <section class="section-separador-reserva">
+            <div  class="content-container">
+                <h2>Alrededores</h2>
+
+                <ul>
+                    <li>
+                        <img src="../assets/iconos/coffee.svg" alt="">
+                        <h3>Cafeterias</h3>
+                    </li>
+
+                    <li>
+                        <img src="../assets/iconos/restaurant.svg" alt="">
+                        <h3>Restaurantes</h3>
+                    </li>
+
+                    <li>
+                        <img src="../assets/iconos/liquor.svg" alt="">
+                        <h3>Bodegas</h3>
+                    </li>
+
+                    <li>
+                        <img src="../assets/iconos/flight.svg" alt="">
+                        <h3>Aeropuerto</h3>
+                    </li>
+                </ul>
+            </div>  
+        </section>
+
+        <section class="section-reserva">
+            <div data-aos="fade-up" data-aos-duration="1000" class="content-container">
+                <h2>Reservas</h2>
+                
+                <form>
+                    <div>
+                        <label for="fecha-entrada">Fecha de entrada:</label>
+                        <input type="date" id="fecha-entrada" name="fecha-entrada" required>
+
+                        <label for="fecha-salida">Fecha de salida:</label>
+                        <input type="date" id="fecha-salida" name="fecha-salida" required>
+
+                        <label for="viajeros">Viajeros:</label>
+                        <input type="number" id="viajeros" name="viajeros" required>
+                    </div>
+                    
+                    <div>
+                        <label for="user-name">Nombre:</label>
+                        <input type="text" id="user-name" name="name" required>
+
+                        <label for="user-last-name">Apellido:</label>
+                        <input type="text" id="user-last-name" name="last-name" required>
+
+                        <label for="user-email">Email:</label>
+                        <input type="email" id="user-email" name="email" required>
+                    </div>
+
+                    <div>
+                        <label for="mensaje">Tu mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" required></textarea>
+                    </div>
+
+                    <button type="submit" >Enviar Mensaje</button>
+                </form>
+                
+            </div>  
+        </section>
+
+        
+    </main>
+    <footer>
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="../assets/sociales/facebook.png" alt="Ingresa a nuestra pagina de facebook">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="../assets/sociales/instagram.png" alt="Ingresa a nuestra pagina de instagram">
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/?lang=es" target="_blank">
+                    <img src="../assets/sociales/x.png" alt="Ingresa a nuestra pagina de X">
+                </a>
+            </li>
+        </ul>
+        <p>&copy;<span id="year"></span>Yamila Navas. Todos los Derechos Reservados</p>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+    </script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+

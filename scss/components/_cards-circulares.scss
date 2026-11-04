@@ -1,0 +1,51 @@
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../utilities/mixins" as *;
+
+/* seccion marcas  */
+.section-separador-reserva .content-container {
+    > ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: rem($espaciado-5);
+        padding: 0;
+
+        > li {
+            @include flex-center(column);
+            min-width: 180px;
+            aspect-ratio: 1/1;
+
+            gap: rem($espaciado-1);
+            padding: rem($espaciado-3);
+            border: 1px solid $color-secundario;
+            border-radius: $radio-borde-redondo;
+            box-shadow: $sombra-destacada;
+            
+            > h3 {
+                font-size: $font-size-xs;
+            }
+            
+            > p {
+                color: $color-secundario;
+            }
+
+            > img {
+                width: 100%;
+                max-width: 60px;
+                object-fit: cover;
+            }
+        }
+
+        @include desde('desktop'){
+            flex-wrap: nowrap;
+            img {
+                width: 100%;
+                max-width: 200px;
+                object-fit: cover;
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@use "../utilities/variables" as *;
+@use "../utilities/functions" as *;
+@use "../utilities/mixins" as *;
+
+/* footer */
+footer {
+    background-image: $gradient-footer;
+    padding: rem($espaciado-2);
+
+    > ul {
+        @include flex-center();
+        gap: rem($espaciado-2);;
+        list-style: none;
+        margin-bottom: rem($espaciado-1);
+        padding: 0;
+
+        > li {
+            flex-basis: rem($espaciado-4 + 5);
+            padding: rem($espaciado-1);
+            border-radius: $radio-borde-redondo;
+            font-size: 0;
+            transition: 
+                background-color $transicion-base, 
+                color $transicion-base;
+
+            > a {
+                font-size: 0;
+               
+                > img {
+                    object-fit: contain;
+                    width: 100%;
+                }
+            }
+
+            &:hover, &:focus {
+                border: 1px solid $color-terciario;
+                box-shadow: $sombra-suave;
+                background-color: $color-terciario;
+                transition: background-color $transicion-base;
+            }
+        }
+    }
+
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: -40px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+
+        @include background-image('../assets/relieve.png');
+        background-size: auto 100%;
+
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    p {
+        font-size: $font-size-sm;
+        color: $color-secundario;
+        margin: 0;
+    }
+}
